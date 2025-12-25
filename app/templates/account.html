@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block title %} account page{% endblock %}
+
+{% block content %}
+
+    <div class="common-container account-box">
+        <!-- <div class="account-head"> -->
+
+
+                <img src="{{ url_for('static', filename = 'images/logo.png') }}" alt="logo img" class="logo inline-block">
+
+            <div class="web-info inline-block">
+                
+                <h3>asmicoders</h3>
+                <p>asmicoders@gmail.com</p>
+            </div>
+
+        <!-- </div> -->
+
+            <div class="account-info">
+                <h4 class="login-h3">Account Info</h4>
+
+                <hr class="divider">
+
+                <form action="{{ url_for('auth.user_account') }}" method="post">
+                    
+                    <div class="input-boxs">
+                        <label for="name">Username</label><br>
+                        <input type="text" name="name" id="name" value = {{userinfo.name}}>
+                    </div>
+
+                    <div class="input-boxs">
+                        <label for="email">Email</label><br>
+                        <input type="email" name="email" id="email" value="{{userinfo.email}}">
+                    </div>
+
+                    <div class="input-boxs pic-file">
+
+                        <label for="file">update profile picture</label><br>
+                        <input type="file" name="profilepic" id="file">
+                    
+                    </div>
+
+                    <button type="submit" class="btn">Update</button>
+ 
+
+                </form>
+
+            </div>
+    </div>
+
+{% endblock %}

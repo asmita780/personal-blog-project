@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+{% block title %}login page{% endblock %}
+
+{% block content %}
+
+
+    <div class="login-box common-container">
+
+        <h3 class="login-h3">Log in</h3>
+
+        <hr class="divider">
+
+        <form action="{{ url_for('auth.login') }}" method="post">
+
+            <div class="form-box1 input-boxs">
+
+                <label for="email">Email</label><br>
+                <input type="email" id="email" name="email" placeholder="user@gmail.con">
+
+            </div>
+
+            <div class="input-boxs">
+
+                <label for="password">Password</label><br>
+                <input type="password" id="password" name="password" placeholder="enter password" required>
+
+            </div>
+
+            <div class="remin-box">
+
+                <input type="radio" id="reminder" name="remainder">
+                <label for="reminder">Remember Me</label>
+            
+            </div>
+
+            <button type="submit" class="boxs-space btn">Login</button>
+
+            <br>
+            <div class="forget-pass">
+
+                <a href="#" class="forget-pass">Forget Password?</a>
+            
+            </div>
+
+        </form>
+
+    </div>
+
+    <hr class="divider line">
+
+    <div class="additional">
+        <p>Need to create an account? <a href="{{ url_for('auth.register') }}">Register</a></p>
+    </div>
+    
+
+{% endblock %}

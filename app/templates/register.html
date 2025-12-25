@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block title %} Register page {% endblock %}
+
+{% block content %}
+
+    <div class="register-box common-container">
+
+        <h3 class="login-h3">Join Today</h3>
+
+        <hr class="divider">
+
+        <form action="{{ url_for('auth.register') }}" method="post">
+
+            <div class="boxs-space input-boxs">
+
+                <label for="name">Username</label><br>
+                <input type="text" id="name" name="name" placeholder="username" required>
+
+            </div>
+
+            <div class="boxs-space input-boxs">
+                <label for="email">Email</label><br>
+                <input type="email" id="email" name="email" placeholder="email" required>
+
+            </div>
+
+            <div class="boxs-space input-boxs ">
+                <label for="pass">Password</label><br>
+                <input type="password" id="pass" name="password" placeholder="password" required>
+            </div>
+
+            <div class="boxs-space input-boxs">
+                <label for="cpass">Conform Password</label><br>
+                <input type="password" id="cpass" name="cpassword" placeholder="confirm password">
+            </div>
+
+            <button type="submit" class="boxs-space btn">Sign Up</button>
+
+        </form>
+
+    </div>
+
+    <hr class="divider line">
+
+    <div class="additional-reg">
+        <p>Alredy have an account?<a href="{{ url_for('auth.login') }}"> Sign in</a></p>
+    </div>
+
+{% endblock %}

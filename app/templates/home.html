@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block title %}home page{% endblock %}
+
+{% block content %}
+
+    {% if userpost %}
+        {% for new_post in userpost %}
+
+            <div class="common-container home-box">
+
+                    <img src="{{ url_for('static', filename = 'images/logo.png') }}" alt="logo-ing" class="logo">
+
+                <!-- <img src="logo.png" class="logo"> -->
+
+                <div class="post-content">
+
+                    <div class="web-name inline-block">
+
+                        <p class="inline-block">asmicoders</p>
+
+                    </div>
+                    
+                    <p class="inline-block">{{new_post.created_at}}</p>
+
+                    <hr class="divider">
+
+                    <h3 class="content-heading">{{new_post.title}}</h3>
+                    <p class="show-cont">{{new_post.content}}</p>
+                    
+
+                </div>
+
+            </div>
+
+            <br>
+
+        {% endfor %}
+
+    {% else %}
+
+        <p>No post is created</p>
+
+    {% endif %}
+
+    <br>
+    
+
+{% endblock %}

@@ -1,0 +1,331 @@
+        *
+        {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        body{
+            background-color: whitesmoke;
+        
+        }
+
+        .inline-block
+        {
+            display: inline-block;
+        }
+
+        .header-box
+        {
+            background: linear-gradient(rgb(207, 207, 223), rgb(103, 103, 221));
+            color: white;
+            box-shadow: 3px 3px 4px rgb(0, 0, 0, 0.4);
+            padding: 15px;
+            font-family: 'DM Serif Text', serif;
+            position: sticky;
+            top: 0px;
+            z-index: 1000;
+
+        }
+
+
+        .header-box h3{
+            left: 110px;        
+        }
+
+        .nav-head a{
+            position: relative;
+            left: 120px;
+            
+        }
+
+        .nav-head{
+            position: relative;
+            margin-top: -3px;
+        }
+
+        .about
+        {
+            position: relative;
+            right: 10px;
+        }
+        .nav-bar{
+            position: absolute;
+            right: 110px;
+        }
+
+        .cont{
+            text-decoration: none;
+            position: relative;
+            color: white;
+            letter-spacing: 0.6px;
+
+        }
+
+        .nav1{
+            right: 30px;
+        }
+
+        .nav2{
+            right: 20px;
+            
+        }
+
+        .nav3{
+            right: 10px;
+        }
+
+        .nav4{
+            position: absolute;
+            right: 91px;
+            
+        }
+
+
+
+/* login page  */
+
+
+
+        .common-container
+        {
+            width: 400px;
+            position: relative;
+            left: 110px;
+            margin-top: 20px;
+            padding:10px 20px;
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: "Poppins", "Montserrat", sans-serif;
+            color: #555;
+            letter-spacing: 0.5px;
+            overflow-y: auto;
+
+        }
+
+        .login-box{
+            width: 400px;
+            height: 260px;
+        }
+
+        .login-h3{
+            margin-top: 7px;
+            margin-bottom: -8px;
+            font-size: 1.3vw;
+        }
+
+        .divider{
+            border: none;
+            width: 360px;
+            height: 0.5px;
+            background-color: #ddd;
+            margin: 10px 0px;
+        }
+
+        .input-boxs label{
+            font-family: 'DM Serif Text', serif;
+            letter-spacing: 0.6px;
+            font-size:1vw;
+
+        }
+
+        .input-boxs input{
+            width: 350px;
+            padding: 7px;
+            margin-top: 2px;
+            border: 1px solid rgb(224, 220, 220);
+            border-radius: 5px;
+            font-weight: 200;
+            font-family: "Poppins", "Montserrat", sans-serif;
+            color: #555;
+
+        }
+
+        .input-boxs{
+            margin-top: 10px;
+
+        }  
+
+        .input-boxs input::placeholder
+        {
+            opacity: 0.4;
+        }
+
+        .remin-box{
+            position: relative;
+            right: 0.5px;     
+            top: 5px;       
+        }
+
+
+        .btn{
+            background-color: white;
+            color: lightblue;
+            padding: 5px;
+            border: 1.5px solid lightblue;
+            border-radius: 3px;
+            cursor: pointer;
+            position: relative;
+            top: 15px;
+        }
+
+        .btn:hover{
+            background-color: rgb(100, 140, 250);
+            color: white;
+        }
+
+        .forget-pass a{
+            text-decoration: none;
+            color:rgb(104, 104, 240);  
+            font-size: 12px;    
+            position: relative;   
+            top:20px;   
+        }
+
+ /* register */
+
+        .register-box{
+            height: 350px;
+            position: relative;
+            left: 110px;
+            margin-top: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 0px 0px 10px 20px;
+        }
+
+        .additional{
+            position: absolute;
+            left: 130px;
+            top: 370px;
+        }
+
+        .additional-reg{
+            position: absolute;
+            left: 125px;
+            top: 450px;
+        }
+
+        .line{
+            position: relative;
+            left: 127px;
+            top: 20px;
+        }
+
+    
+/* post page */
+
+        .post-box{
+            height: 250px;
+        }
+
+        .cont-box{
+            width: 360px;
+            height: 50px;
+            border: 1px solid rgb(224, 220, 220);
+            padding: 10px;
+            font-weight: 200;
+
+        }
+
+        .cont-box::placeholder
+        {
+            padding: 15px;
+            opacity: 0.4;
+
+        }
+
+        .logo{
+            width: 40px;
+            height: auto;
+        }
+
+        .home-box{
+            width: 500px;
+            height: auto;
+        }
+
+
+        .post-content p{
+            font-size: x-small;
+            letter-spacing: 0.5px;
+        }
+
+        .content-heading
+        {
+
+            letter-spacing: 0.5px;
+        }
+
+        .show-cont{
+            line-height: 17px;
+            padding-top: 10px;
+
+        }
+
+        .web-name p
+        {
+            color: lightskyblue;
+            padding-right: 7px;
+        }
+
+ /* account */
+
+        .account-box
+        {
+            /* width: 400px; */
+            height: 310px;
+        }
+
+
+        .pic-file input
+        {
+            border: none;
+            position: relative;
+            right: 7px;
+        }
+
+        .web-info
+        {
+            position: relative;
+            left: 20px;
+            bottom: 5px;
+        }
+
+        .web-info p
+        {
+            font-size: 10px;
+            margin-top: 5px;
+            color: #ada6a6;
+        }
+
+        .pic-file input
+        {
+            font-family: "Poppins", "Montserrat", sans-serif;
+            color: #555;
+        }
+
+        .flash
+        { 
+            width: 425px;
+            position: relative;
+            left: 110px;
+            top: 10px;
+            padding: 7px;
+            font-size: 10px;
+            margin-top: 5px;
+            color:#555;
+        }
+
+        .flash.success{
+            background-color: rgb(189, 236, 189);
+            
+        }
+
+        .flash.denger
+        {
+            background-color: lightcoral;
+
+        }
+        
+

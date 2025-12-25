@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Base page{% endblock %}</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'css/style.css') }}">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Martian+Mono:wght@100..800&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+    <header class="header-box">
+
+            <h3 class="inline-block cont nav-head">Flask Blog</h3>
+
+            <div class="nav-head inline-block">
+
+                <a href="{{ url_for('task.view_post') }}" class="cont">Home</a>
+                <a href="{{url_for('auth.about')}}" class="cont" >about</a>
+             
+            </div>
+
+
+        <nav class="nav-bar inline-block">
+
+            {% if session.user %}
+
+                <a href="{{ url_for('task.task_post') }}" class="nav1 cont">New Post</a>
+                <a href="{{ url_for('auth.user_account') }}" class="cont nav2">Account</a>
+                <a href="{{ url_for('auth.logout') }}" class="nav3 cont">Logout</a>
+
+            {% else %}
+                <a href="{{ url_for('auth.login') }}" class="nav4 cont">Login</a> 
+                <a href="{{ url_for('auth.register') }}" class="nav3 cont">Register</a>
+                           
+            {% endif %}
+
+        </nav>
+    </header>
+
+    {% with messages = get_flashed_messages( with_categories = True ) %}
+        {% if messages %}
+            {% for category, mess in messages %}
+                <div class="flash {{ category }}">{{mess}}</div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+
+    {% block content %}
+    {% endblock %}
+    
+</body>
+</html>

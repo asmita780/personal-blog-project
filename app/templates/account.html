@@ -7,7 +7,7 @@
     <div class="common-container account-box">
         <!-- <div class="account-head"> -->
 
-            {% if userinfo.filename %}
+            {% if userinfo.filename != "filepic" %}
 
                 <img src="{{ url_for('static', filename = 'images/'~userinfo.filename) }}" alt="logo-img" class="logo inline-block">
             

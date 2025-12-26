@@ -6,14 +6,13 @@ import os
 auth_bp = Blueprint("auth", __name__)
 
 
-# img................
+# for img................
 ALLOWED_EXTENSIONS = {"png", "jpg", "jpeg", "gif"}
 
 
 def allowed_file(filename):
     return "." in filename and filename.rsplit(".", 1)[1].lower() in ALLOWED_EXTENSIONS
 
-# img...........................................
 
 
 # login
@@ -35,42 +34,7 @@ def login():
     
     return render_template("login.html")
 
-# register
-@auth_bp.route("/register", methods = ["POST", "GET"])
-def register():
 
-    if request.method == "POST":
-
-        username = request.form.get("name")
-        if username not in login_session:
-
-            user = UserDetails.query.filter_by(name = username).first()
-
-            if user:
-                flash("Username alreday exists. Please select another username!", "denger")
-                return render_template("register.html")
-
-            password1 = request.form.get("password")
-            password2 = request.form.get("cpassword")
-            if password1 == password2:
-                email = request.form.get("email")
-
-                user_info = UserDetails(name = username, email = email, password = password1, filename = "filepic") 
-                db.session.add(user_info)    
-                db.session.commit()
-                
-                login_session["user"] = user_info.name
-                flash("Your account has been created!", 'success')
-                return redirect(url_for('task.view_post'))
-            
-            flash("Both passwords are not same", 'denger')
-            return render_template("register.html")
-        
-        return redirect(url_for('auth.login'))
-        
-    return render_template("register.html")
-
-    
 
 # logout
 @auth_bp.route("/logout", methods = ["POST", "GET"])
@@ -81,6 +45,46 @@ def logout():
         return redirect(url_for('task.view_post'))
     
     return redirect(url_for('auth.login'))
+
+
+
+# register
+@auth_bp.route("/register", methods = ["POST", "GET"])
+def register():
+
+    if request.method == "POST":
+
+            username = request.form.get("name")
+        # if username not in login_session:
+
+            user = UserDetails.query.filter_by(name = username).first()
+
+            if user:
+                flash("Username alreday exists. Please select another username!", "denger")
+                return render_template("register.html")
+
+            password1 = request.form.get("password")
+            password2 = request.form.get("cpassword")
+            if password1 != password2:
+
+                flash("Both passwords are not same", 'denger')
+                return render_template("register.html")
+            
+            email = request.form.get("email")
+            user_info = UserDetails(name = username, email = email, password = password1, filename = "filepic") 
+            db.session.add(user_info)    
+            db.session.commit()
+                
+            login_session["user"] = user_info.name
+            flash("Your account has been created!", 'success')
+            return redirect(url_for('task.view_post'))
+            
+        
+        # return redirect(url_for('auth.login'))
+        
+    return render_template("register.html")
+
+    
 
 
 # account
@@ -97,7 +101,7 @@ def user_account():
             user.name = up_name
             user.email = up_email
 
-    # imag...........
+            # imag......
 
             file = request.files.get("image")
 
@@ -114,7 +118,7 @@ def user_account():
                     file.save(filepath)
                     user.filename = filename  # saving img 
 
-    # img..................     
+            # img..................     
 
             db.session.commit()
             login_session["user"]=user.name
@@ -125,7 +129,7 @@ def user_account():
         return render_template("account.html")
     
     username = login_session.get("user")
-    user =UserDetails.query.filter_by(name = username).first()
+    user = UserDetails.query.filter_by(name = username).first()
     return render_template("account.html", userinfo = user)
 
 
@@ -137,7 +141,8 @@ def about():
     return render_template("about.html")
 
 
-
+# global variable
 @auth_bp.context_processor
 def inject_session():
     return dict(session=login_session)
+

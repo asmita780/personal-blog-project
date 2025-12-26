@@ -29,9 +29,7 @@
             position: sticky;
             top: 0px;
             z-index: 1000;
-
         }
-
 
         .header-box h3{
             left: 110px;        
@@ -86,9 +84,7 @@
         }
 
 
-
 /* login page  */
-
 
 
         .common-container
@@ -189,7 +185,9 @@
         .additional{
             position: absolute;
             left: 130px;
-            top: 385px;
+            top: 350px;
+            color: rgba(255, 255, 255, 0.815);
+
         }
 
 
@@ -210,6 +208,8 @@
             position: absolute;
             left: 125px;
             top: 430px;
+            color: rgba(255, 255, 255, 0.815);
+
         }
 
         .line{

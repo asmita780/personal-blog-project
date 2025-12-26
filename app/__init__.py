@@ -1,6 +1,9 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 
+import os
+
+
 db = SQLAlchemy()
 
 def create_app():
@@ -10,6 +13,7 @@ def create_app():
     app.config["SECRET_KEY"] = "MY_SECRET_KEY"
     app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///database.db"
     app.config["DATABASE_TRACK_MODIFICATION"] = False
+    app.config["UPLOAD_FOLDER"] = "app/static/images" #tells flask where to store file
 
     db.__init__(app)
 

@@ -7,8 +7,15 @@
     <div class="common-container account-box">
         <!-- <div class="account-head"> -->
 
+            {% if userinfo.filename %}
 
-                <img src="{{ url_for('static', filename = 'images/logo.png') }}" alt="logo img" class="logo inline-block">
+                <img src="{{ url_for('static', filename = 'images/'~userinfo.filename) }}" alt="logo-img" class="logo inline-block">
+            
+            {% else %}
+
+                    <img src="{{ url_for('static', filename = 'images/logo.png') }}" alt="logo img" class="logo inline-block">
+
+            {% endif %}
 
             <div class="web-info inline-block">
                 
@@ -19,11 +26,13 @@
         <!-- </div> -->
 
             <div class="account-info">
+
                 <h4 class="login-h3">Account Info</h4>
 
                 <hr class="divider">
 
-                <form action="{{ url_for('auth.user_account') }}" method="post">
+
+                <form action="{{ url_for('auth.user_account') }}" enctype="multipart/form-data" method="post">
                     
                     <div class="input-boxs">
                         <label for="name">Username</label><br>
@@ -35,16 +44,15 @@
                         <input type="email" name="email" id="email" value="{{userinfo.email}}">
                     </div>
 
-                    <div class="input-boxs pic-file">
+                    <div class="input-boxs file">
 
                         <label for="file">update profile picture</label><br>
-                        <input type="file" name="profilepic" id="file">
+                        <input type="file" name="image" id="file">
                     
                     </div>
 
                     <button type="submit" class="btn">Update</button>
  
-
                 </form>
 
             </div>

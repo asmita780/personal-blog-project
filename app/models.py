@@ -6,6 +6,7 @@ class UserDetails(db.Model):
     name = db.Column(db.String(100), nullable = False)
     email = db.Column(db.String(100), nullable = False)
     password = db.Column(db.String(100), nullable = False)
+    filename = db.Column(db.String(200), nullable = False)
 
 
 class UserPost(db.Model):

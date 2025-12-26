@@ -8,7 +8,6 @@ task_bp = Blueprint("task", __name__)
 def view_post():
 
     userpost = UserPost.query.all()
-    print(userpost)
     return render_template("home.html",userpost = userpost)
 
 @task_bp.route("/task_post", methods = ["POST", "GET"])

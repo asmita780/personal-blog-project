@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Base page{% endblock %}</title>
@@ -35,13 +36,35 @@
                 <a href="{{ url_for('auth.logout') }}" class="nav3 cont">Logout</a>
 
             {% else %}
-                <a href="{{ url_for('auth.login') }}" class="nav4 cont">Login</a> 
+                <a href="{{ url_for('auth.login') }}" class="nav2 cont">Login</a> 
                 <a href="{{ url_for('auth.register') }}" class="nav3 cont">Register</a>
                            
             {% endif %}
 
+            <div class="sidebar">
+
+                <h2 class="sidebar-head">Our Sidebar</h2>
+
+                <p>You can put any information here you'd like</p>
+
+                <form action="">
+                    <div class="sidebar-input">
+                        <input type="text" name="post" placeholder="Last Posts">
+
+                        <input type="text" name="announ" placeholder="announcements">
+
+                        <input type="text" name="calendar" placeholder="Calendars">
+
+                        <input type="text" name="etc" placeholder="etc">
+                    </div>
+                </form>
+
+            </div>
+
         </nav>
     </header>
+
+
 
     {% with messages = get_flashed_messages( with_categories = True ) %}
         {% if messages %}
